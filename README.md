@@ -97,3 +97,7 @@ Our approach successfully creates:
 - Semi-supervised learning works well with minimal labeled data
 - Latent space embeddings effectively capture dance dynamics
 - Simple KNN approaches can be effective for small datasets before scaling to transformers
+  
+## Note  
+
+- Each task has detailed documentation available in its respective folder. Please refer to them for more information.
