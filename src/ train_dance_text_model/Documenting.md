@@ -1,6 +1,6 @@
 # AI-Enabled Choreography: Dance Motion Generation and Labeling
 
-This repository contains the code and documentation for the **AI-Enabled Choreography** project, submitted as part of the application process for the HumanAI GSoC 2025. The project leverages motion capture data to generate and label dance sequences using a combination of autoencoders, semi-supervised learning, and multimodal text-to-dance and dance-to-text generation. The implementation is divided across three Jupyter notebooks, each focusing on a distinct component of the workflow.
+The implementation is divided across three Jupyter notebooks, each focusing on a distinct component of the workflow.
 
 > "I didn’t want to imitate anybody. Any movement I knew, I didn’t want to use."  
 > — Jennings (2009)
