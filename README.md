@@ -100,6 +100,6 @@ Our approach successfully creates:
   
 ## Note  
 
-- Each task has detailed documentation available in its respective folder. Please refer to the following files for more information:
-	•	src/dance_animation/documentation_01.md
-	•	src/ train_dance_text_model/documentation_02.md
+- Each task has detailed documentation available in its respective folder. Please refer to the following files for more information:  
+  - [First Documentation](src/dance_animation/documentation_01.md)  
+  - [Second Documentation](src/train_dance_text_model/documentation_02.md)
