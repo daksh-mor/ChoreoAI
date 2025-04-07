@@ -137,7 +137,7 @@ Most of this is done while making the animation
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/9efb009f-bdca-42d3-ad21-749d8755d105" width="250">
+      <img src="https://github.com/user-attachments/assets/7919b7e0-0c55-4bd8-a4b5-3aaba878a473" width="250">
       <br>
       <b>Made Neck Rotation from Text</b>
     </td>
@@ -148,6 +148,7 @@ Most of this is done while making the animation
     </td>
   </tr>
 </table>
+
     
 - **Dance-to-Text**:
   - Encode a dance sequence into the latent space.
@@ -155,13 +156,16 @@ Most of this is done while making the animation
 - **Reasoning**: KNN is chosen over a transformer decoder due to the small dataset (80 sequences), avoiding overfitting and leveraging proximity in the latent space.
 
 <div style="position: relative; display: inline-block;">
-    <img src="https://github.com/user-attachments/assets/bee184b8-a914-461c-8604-518ceab27dbd" width="250">
+    <img src="https://github.com/user-attachments/assets/c7b0af01-1eb2-4b42-95d5-df5d1886fed0" width="250">
     <p style="position: absolute; top: 10px; left: 10px; background: rgba(0, 0, 0, 0.7); color: white; padding: 5px; font-size: 14px;">
-        This GIF's dance text was predicted by the model as "Neck Rotation"
+        This GIF's dance text was predicted by the model as "spin with little hand movement" however the original label was "spin with right hand above"
     </p>
 </div>
 
-
+Unfortunately, the model currently struggles with both text-to-motion and motion-to-text accuracy. 
+The main reasons are:
+	•	Unprofessional labeling: Descriptions like “spin with right hand above” vs. “spin with little hand movement” can be too semantically distant despite similar motions.
+	•	Overly long/unique labels: While BERT is good with semantics, inconsistent or overly verbose labels reduced the effectiveness of the embedding alignment.
 
 ---
 
@@ -209,6 +213,16 @@ Most of this is done while making the animation
 
 ## Conclusion
 
-This project successfully implements an AI-enabled choreography system, integrating motion autoencoders, semi-supervised labeling, and multimodal generation. While the results demonstrate potential—accurate reconstructions, reasonable labels, and text-motion mappings—limitations include the small dataset and reliance on limited manual labels. Future enhancements could involve larger datasets, professional labeling, and advanced generative models like transformers with sufficient data.
+
+This project successfully implements an AI-enabled choreography system, integrating motion autoencoders, semi-supervised labeling, and multimodal generation. While the results demonstrate potential—accurate reconstructions, reasonable labels, and text-motion mappings—limitations include the small dataset, reliance on limited manual labels, and inconsistencies in label quality.
+
+To fix these issues:
+	•	Expand the dataset to improve generalization and reduce overfitting risks.
+	•	Use professionally annotated or standardized motion labels to ensure consistency and better alignment with text embeddings.
+	•	Avoid long, inconsistent descriptions, which can confuse semantic models like BERT.
+	•	Incorporate validation sets properly during evaluation to avoid overestimating performance.
+	•	Explore advanced generative models like transformers, provided sufficient high-quality data is available.
+
+Future enhancements could involve scaling the dataset, refining the labeling pipeline, and experimenting with more expressive multimodal architectures.
 
 ---
