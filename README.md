@@ -115,3 +115,4 @@ I guess I should not have labelled the images with long text like these actually
 - Each task has detailed documentation available in its respective folder. Please refer to the following files for more information:  
   - [First Documentation](src/dance_animation/documentation_01.md)  
   - [Second Documentation](src/%20train_dance_text_model/documentation_02.md)
+  - [Report in PDF](choreo_ai_report.pdf)  
