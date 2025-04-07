@@ -45,6 +45,8 @@ The autoencoder compresses dance sequences into a 64-dimensional latent space th
 ## Semi-Supervised Labeling
 
 With only 10 manually labeled sequences, we label the remaining 70 using KNN classification with data augmentation:
+<img width="540" alt="augmentation_concept" src="https://github.com/user-attachments/assets/8c404e79-0e2c-4474-88c7-332d06bf5a16" />
+
 
 <img width="327" alt="image" src="https://github.com/user-attachments/assets/0cef1b44-fcc2-4fcb-b32d-a6abb9a3be1b" />
 
@@ -57,12 +59,13 @@ t-SNE visualization shows the clustering of similar movements:
 
 Our system can:
 1. Generate dance sequences from text descriptions
+
 2. Describe dance sequences with appropriate text labels (using KNN)
 
 <table>
   <tr>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/9efb009f-bdca-42d3-ad21-749d8755d105" width="250">
+       <img src="https://github.com/user-attachments/assets/7919b7e0-0c55-4bd8-a4b5-3aaba878a473" width="250">
       <br>
       <b>Generated from "Neck Rotation"</b>
     </td>
@@ -79,14 +82,21 @@ Our system can:
 Our approach successfully creates:
 - High-quality 3D skeleton visualizations with orientation indicators
 - Accurate dance sequence reconstructions via autoencoder
-- Reasonable text-to-motion and motion-to-text mappings despite limited labeled data
 
-![Dance Animation](https://github.com/user-attachments/assets/6baba1ae-8a60-4541-ad3f-dd4324b783bf)
+Unable to do very accurately :
+- text-to-motion and motion-to-text mappings because most probably of unprofessional labeling
+
+<img width="520" alt="image" src="https://github.com/user-attachments/assets/a66cf065-7b58-4224-8722-b1f9b64cfdf3" />
+
+![spin with right hand above](https://github.com/user-attachments/assets/f65e03cd-7e5f-47fc-9bd9-1e917e60b079)
+
+for this animation the correct label was spin with right hand above and our model predicted spin with little hand movement
+I guess I should not have labelled the images with long text like these actually i thought that bert's embedding would work fine even if the labels were quite different as it would capture the sementic meanings but still nothing like that happened.
 
 ## Future Work
 
 - Enhanced visualization with shadows and velocity indicators
-- Larger dataset with professional labeling
+- Improving alot the text to dance and dance to text multi model
 - Transformer-based sequence models for more complex choreography
 - Support for multi-dancer choreography using Graph Neural Networks
 
@@ -99,6 +109,8 @@ Our approach successfully creates:
 - Simple KNN approaches can be effective for small datasets before scaling to transformers
   
 ## Note  
+
+- If i am being honest what actually happened was that after making alll the documentation and all when i was making the proposal i cam to know that i actually used the training data itself instead of val while text to dance and dance to text multimodal testing so thats why my initial results were too good but then i realised that the models were not working as expected so i fixed the readme.md with the correct result but still in some documentation if you found that the model worked very great please ignore as it was on trainin dataset.
 
 - Each task has detailed documentation available in its respective folder. Please refer to the following files for more information:  
   - [First Documentation](src/dance_animation/documentation_01.md)  
